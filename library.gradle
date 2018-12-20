@@ -1,0 +1,19 @@
+ext {
+    compileVersion = 28
+    minVersion = 15
+    targetVersion = 28
+
+    supportVersion = '28.0.0-alpha1'
+    kotlinVersion = '1.2.61'
+    lifecycleVersion = '1.1.1'
+    pagingVersion = '1.0.1'
+    timberVersion = "4.7.1"
+    koinVersion = "0.9.3"
+    daggerVersion = "2.16"
+    retrofitVersion = "2.4.0"
+    okHttpVersion = "3.12.0"
+    rxJavaVersion = "2.2.1"
+    rxAndroidVersion = "2.1.0"
+    glideVersion = "4.8.0"
+    mockitoVersion = "2.21.0"
+}
