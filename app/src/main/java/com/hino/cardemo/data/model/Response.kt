@@ -9,5 +9,5 @@ import com.google.gson.annotations.SerializedName
 data class Response<T>(
     @SerializedName("page") var page: Int = 0,
     @SerializedName("pageSize") var pageSize: Int = 0,
-    @SerializedName("totalPageCount") var total : Int,
+    @SerializedName("totalPageCount") var total : Int = 0,
     @SerializedName("wkda") var data : T)

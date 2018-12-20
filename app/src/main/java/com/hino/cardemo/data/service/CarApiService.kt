@@ -11,11 +11,15 @@ import retrofit2.http.Query
  */
 interface CarApiService {
     @GET("v1/car-types/manufacturer")
-    fun getManufacturer(@Query("wa_key")waKey : String,
-                        @Query("page") page : Int,
+    fun getManufacturer(@Query("page") page : Int,
                         @Query("pageSize") pageSize : Int) : Observable<Response<Map<String, String>>>
 
-    fun getMainType() : Observable<Any>
+    @GET("v1/car-types/main-types")
+    fun getMainType(@Query("manufacturer")manufacturer : String,
+                    @Query("page") page : Int,
+                    @Query("pageSize") pageSize : Int) : Observable<Response<Map<String, String>>>
 
-    fun getBuildDate() : Observable<Any>
+    @GET("v1/car-types/built-dates")
+    fun getBuildDate(@Query("manufacturer") manufacturer : String,
+                     @Query("main-type") type : String) : Observable<Response<Map<String, String>>>
 }

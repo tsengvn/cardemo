@@ -3,6 +3,7 @@ package com.hino.cardemo.ui.list
 import android.arch.paging.PagedListAdapter
 import android.content.Context
 import android.databinding.DataBindingUtil
+import android.graphics.Color
 import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -35,6 +36,13 @@ class ItemDataAdapter : PagedListAdapter<ItemData, ItemDataAdapter.ItemViewHolde
     class ItemViewHolder(private val binding : ViewItemBinding) : RecyclerView.ViewHolder(binding.root) {
         private val viewModel = ItemViewModel()
         fun bind(itemData: ItemData) {
+            val bgColor = if (adapterPosition % 2 == 0) {
+                Color.GRAY
+            } else {
+                Color.WHITE
+            }
+            itemView.setBackgroundColor(bgColor)
+
             viewModel.bind(itemData)
             binding.viewModel = viewModel
         }

@@ -9,12 +9,4 @@ import io.reactivex.disposables.CompositeDisposable
  * @since 16/12/18
  */
 open class BaseViewModel: ViewModel() {
-
-    val loader: MutableLiveData<Boolean> = MutableLiveData()
-    var compositeDisposable: CompositeDisposable = CompositeDisposable()
-
-    override fun onCleared() {
-        super.onCleared()
-        compositeDisposable.clear()
-    }
 }

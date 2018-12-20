@@ -5,6 +5,6 @@ package com.hino.cardemo.data.model
  * @since 12/18/18
  */
 enum class DataType {
-    Manufacturer
+    Manufacturer, Type, Build
 
 }

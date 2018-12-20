@@ -1,10 +1,9 @@
 package com.hino.cardemo.ui
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import com.hino.cardemo.data.model.DataType
 import com.hino.cardemo.ui.list.ListActivity
-import com.hino.cardemo.ui.list.ScreenType
 
 /**
  * @author Hien Ngo
@@ -13,28 +12,24 @@ import com.hino.cardemo.ui.list.ScreenType
 object Navigator {
     fun openManufaturer(context: Context) {
         val intent = Intent(context, ListActivity::class.java)
-        intent.putExtra("type", ScreenType.Manufacturer)
+        intent.putExtra("type", DataType.Manufacturer)
         context.startActivity(intent)
     }
 
-    fun openType(context: Context, manufacturer : String) {
+    fun openType(context: Context) {
         val intent = Intent(context, ListActivity::class.java)
-        intent.putExtra("type", ScreenType.Type)
-        intent.putExtra("manufacturer", manufacturer)
+        intent.putExtra("type", DataType.Type)
         context.startActivity(intent)
     }
 
-    fun openBuildDate(context: Context, manufacturer: Int, type: Int) {
+    fun openBuildDate(context: Context) {
         val intent = Intent(context, ListActivity::class.java)
-        intent.putExtra("type", ScreenType.Build)
-        intent.putExtra("manufacturer", manufacturer)
-        intent.putExtra("type", manufacturer)
+        intent.putExtra("type", DataType.Build)
         context.startActivity(intent)
     }
 
-    fun openResult(activity: Activity) {
-//        val intent = Intent(activity, ListActivity::class.java)
-//
-//        activity.startActivity(intent)
+    fun openResult(context: Context) {
+        val intent = Intent(context, MainActivity::class.java)
+        context.startActivity(intent)
     }
 }
