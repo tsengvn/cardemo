@@ -12,10 +12,11 @@ import dagger.android.ContributesAndroidInjector
  */
 @Module
 abstract class ActivityModule {
-
+    @ActivityScope
     @ContributesAndroidInjector
     abstract fun listActivity(): ListActivity
 
+    @ActivityScope
     @ContributesAndroidInjector
     abstract fun mainActivity(): MainActivity
 }
